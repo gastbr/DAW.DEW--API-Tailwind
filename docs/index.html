@@ -50,17 +50,29 @@
     </section>
 
     <!-- Featured Products Section -->
-    <section class="py-16 px-6 text-center">
+    <section class="py-16 px-6 text-center flex flex-col items-center">
         <h2 class="text-3xl font-semibold mb-8">Featured Products</h2>
-        <div class="mb-8">
-            <label for="ppp" class="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">Products per page:</label>
-            <select id="products-per-page" name="ppp" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200">
-                <option disabled selected value="0">Select option...</option>
-                <option value="1">1</option>
-                <option value="6">6</option>
-                <option value="10">10</option>
-                <option value="18">18</option>
-            </select>
+        <div class="mb-8 w-2/5 flex justify-between">
+            <div>
+                <label for="ppp" class="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">Products per page:</label>
+                <select id="products-per-page" name="ppp" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200">
+                    <option disabled selected value="0">Select option...</option>
+                    <option value="1">1</option>
+                    <option value="6">6</option>
+                    <option value="10">10</option>
+                    <option value="18">18</option>
+                </select>
+            </div>
+            <div>
+                <label for="filter" class="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">Filter:</label>
+                <select id="filter" name="filter" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200">
+                    <option disabled selected value="0">Select option...</option>
+                    <option value="price-asc">Price: Lowest first</option>
+                    <option value="price-desc">Price: Highest first</option>
+                    <option value="name-asc">Name: A to Z</option>
+                    <option value="name-desc">Name: Z to A</option>
+                </select>
+            </div>
         </div>
         <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         </div>
