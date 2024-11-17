@@ -1,4 +1,4 @@
-﻿# DAW.DEW--API-Tailwind
+﻿# DEW: API fetch on Tailwind
 - **CSS framework**: [Tailwind](https://tailwindcss.com/)
 - **Components**: [DaisyUI](https://daisyui.com/)
 - **API**: [Fake Store API](https://fakestoreapi.com/)
