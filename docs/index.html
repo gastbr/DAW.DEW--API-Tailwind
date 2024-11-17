@@ -122,10 +122,10 @@
         // Apply the stored theme on page load
         if (currentTheme === "dark") {
             document.documentElement.classList.add("dark");
-            themeToggleButton.textContent = "☀️"; // Change to sun icon
+            themeToggleButton.textContent = "Cart"; // Change to sun icon
         } else {
             document.documentElement.classList.remove("dark");
-            themeToggleButton.textContent = "🌙"; // Change to moon icon
+            themeToggleButton.textContent = "Cart"; // Change to moon icon
         }
 
         // Toggle between dark and light mode when button is clicked
@@ -136,10 +136,10 @@
             // Save the theme preference in localStorage
             if (document.documentElement.classList.contains("dark")) {
                 localStorage.setItem("theme", "dark");
-                themeToggleButton.textContent = "☀️"; // Change to sun icon
+                themeToggleButton.textContent = "Cart"; // Change to sun icon
             } else {
                 localStorage.setItem("theme", "light");
-                themeToggleButton.textContent = "🌙"; // Change to moon icon
+                themeToggleButton.textContent = "Cart"; // Change to moon icon
             }
         });
     </script>
