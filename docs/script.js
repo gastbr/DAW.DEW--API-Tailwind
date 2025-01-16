@@ -82,3 +82,27 @@ function emptyDOMList() {
     DOMproductList.removeChild(DOMproductList.lastChild);
   }
 }
+
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+});
+
+// Hide navbar on scroll down
+
+const nav = document.querySelector('nav');
+const threshold = 0.2; // 20% of the page height
+
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  const pageHeight = document.body.offsetHeight;
+  const scrollPercentage = scrollPosition / pageHeight;
+
+  if (scrollPercentage > threshold) {
+    nav.classList.add('nav-hide');
+  } else {
+    nav.classList.remove('nav-hide');
+  }
+});

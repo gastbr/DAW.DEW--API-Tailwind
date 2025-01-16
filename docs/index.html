@@ -8,7 +8,7 @@
     <title>Togashi | Clothing Store</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="input.css">
     <link rel="stylesheet" href="output.css">
     <style>
         /* Enabling dark mode based on user preferences */
@@ -23,22 +23,39 @@
 
 <body class="bg-gray-50 dark:bg-gray-900 dark:text-white transition-all">
     <!-- Header -->
-    <header class="flex justify-between items-center p-6 bg-gray-800 dark:bg-gray-900 text-white">
-        <div class="w-1/5 flex justify-start text-2xl font-bold"><a id="title" href="#">Togashi</a></div>
-        <nav class="mx-auto">
-            <ul class="flex gap-8">
-                <li><a href="#" class="hover:text-orange-400">Home</a></li>
-                <li><a href="#" class="hover:text-orange-400">Shop</a></li>
-                <li><a href="#" class="hover:text-orange-400">About Us</a></li>
-                <li><a href="#" class="hover:text-orange-400">Cart</a></li>
-            </ul>
+    <header class="flex justify-between items-center p-6 bg-gray-800 dark:bg-gray-900 text-white h-20">
+        <nav class="shadow-md fixed right-0 w-full h-20 z-10 bg-gray-900 bg-opacity-50">
+            <div class="container mx-auto flex items-center justify-between h-20">
+                <div class="flex justify-between items-center w-full">
+                    <!-- Dark/Light Mode Toggle Button -->
+                    <!--                    <div class="flex justify-end">
+                        <button id="theme-toggle" class="bg-orange-600 text-white p-2 rounded-lg hover:bg-orange-500 focus:outline-none">
+                        </button>
+                    </div> -->
+                    <div class="w-1/5 flex justify-start text-2xl font-bold ml-4"><a id="title" href="#">Togashi</a></div>
+                    <!-- Burger Icon -->
+                    <div class="md:hidden mr-4">
+                        <button id="menu-btn" class="text-3xl focus:outline-none">
+                            &#9776;
+                        </button>
+                    </div>
+                    <!-- Nav Links -->
+                    <ul id="nav-links" class="hidden md:flex gap-8">
+                        <li><a href="#" class="hover:text-orange-400">Home</a></li>
+                        <li><a href="#" class="hover:text-orange-400">Shop</a></li>
+                        <li><a href="#" class="hover:text-orange-400">About Us</a></li>
+                        <li><a href="#" class="hover:text-orange-400">Cart</a></li>
+                    </ul>
+                </div>
+                <!-- Mobile Menu -->
+                <ul id="mobile-menu" class="hidden flex-col gap-4 md:hidden text-center py-4">
+                    <li><a href="#" class="block hover:text-orange-400">Home</a></li>
+                    <li><a href="#" class="block hover:text-orange-400">Shop</a></li>
+                    <li><a href="#" class="block hover:text-orange-400">About Us</a></li>
+                    <li><a href="#" class="block hover:text-orange-400">Cart</a></li>
+                </ul>
+            </div>
         </nav>
-        <!-- Dark/Light Mode Toggle Button -->
-        <div class="w-1/5 flex justify-end">
-            <button id="theme-toggle" class=" bg-orange-600 text-white p-2 rounded-lg hover:bg-orange-500 focus:outline-none">
-                Cart
-            </button>
-        </div>
     </header>
 
     <!-- Hero Section -->
@@ -47,14 +64,14 @@
         <div class="relative z-10 text-white p-6">
             <h1 class="text-4xl sm:text-5xl font-semibold mb-4">Find Your Perfect Look</h1>
             <p class="text-lg sm:text-xl mb-6">Shop the latest fashion trends at unbeatable prices!</p>
-            <a href="#" class="bg-orange-600 text-white py-3 px-6 rounded-md hover:bg-orange-500 transition-all">Shop Now</a>
+            <button href="#" class="bg-orange-600 text-white py-3 px-6 rounded-md hover:bg-orange-500 transition-all">See catalogue</button>
         </div>
     </section>
 
     <!-- Featured Products Section -->
     <section class="py-16 px-6 text-center flex flex-col items-center">
         <h2 class="text-3xl font-semibold mb-8">Featured Products</h2>
-        <div class="mb-8 w-2/5 flex justify-between">
+        <div class="mb-8 w-2/5 gap-8 flex flex-col items-center text-center sm:flex-row justify-between">
             <div>
                 <label for="ppp" class="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">Products per page:</label>
                 <select id="products-per-page" name="ppp" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200">
@@ -122,10 +139,10 @@
         // Apply the stored theme on page load
         if (currentTheme === "dark") {
             document.documentElement.classList.add("dark");
-            themeToggleButton.textContent = "Cart"; // Change to sun icon
+            themeToggleButton.textContent = "Ligth"; // Change to sun icon
         } else {
             document.documentElement.classList.remove("dark");
-            themeToggleButton.textContent = "Cart"; // Change to moon icon
+            themeToggleButton.textContent = "Dark"; // Change to moon icon
         }
 
         // Toggle between dark and light mode when button is clicked
@@ -136,10 +153,10 @@
             // Save the theme preference in localStorage
             if (document.documentElement.classList.contains("dark")) {
                 localStorage.setItem("theme", "dark");
-                themeToggleButton.textContent = "Cart"; // Change to sun icon
+                themeToggleButton.textContent = "Light"; // Change to sun icon
             } else {
                 localStorage.setItem("theme", "light");
-                themeToggleButton.textContent = "Cart"; // Change to moon icon
+                themeToggleButton.textContent = "Dark"; // Change to moon icon
             }
         });
     </script>
